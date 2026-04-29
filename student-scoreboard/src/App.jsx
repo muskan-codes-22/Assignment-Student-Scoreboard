@@ -1,0 +1,53 @@
+import React, { useState } from "react";
+import Header from "./components/Header";
+import StudentTable from "./components/StudentTable";
+import AddStudentForm from "./components/AddStudentForm";
+import "./styles/style.css";
+
+function App() {
+  const [students, setStudents] = useState([
+    { id: 1, name: "Muskan", score: 85 },
+    { id: 2, name: "Rahul", score: 35 },
+  ]);
+
+  const updateScore = (id, newScore) => {
+    const updated = students.map((student) =>
+      student.id === id ? { ...student, score: newScore } : student,
+    );
+    setStudents(updated);
+  };
+
+  const addStudent = (name, score) => {
+    if (!name || score === "") return;
+
+    const newStudent = {
+      id: Date.now(),
+      name,
+      score,
+    };
+
+    setStudents([...students, newStudent]);
+  };
+
+  const deleteStudent = (id) => {
+    const filtered = students.filter((student) => student.id !== id);
+    setStudents(filtered);
+  };
+
+  return (
+    <div className="app-container">
+      <Header />
+      <AddStudentForm addStudent={addStudent} />
+
+      <div className="table-container">
+        <StudentTable
+          students={students}
+          updateScore={updateScore}
+          deleteStudent={deleteStudent}
+        />
+      </div>
+    </div>
+  );
+}
+
+export default App;
