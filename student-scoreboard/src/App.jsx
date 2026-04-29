@@ -11,7 +11,7 @@ function App() {
     { id: 2, name: "Rahul", score: 35 },
   ]);
 
-  // Update score
+  
   const updateScore = (id, newScore) => {
     const updated = students.map((student) =>
       student.id === id ? { ...student, score: newScore } : student
@@ -19,7 +19,7 @@ function App() {
     setStudents(updated);
   };
 
-  // Add student
+  
   const addStudent = (name, score) => {
     if (!name || score === "") return;
 
@@ -32,13 +32,13 @@ function App() {
     setStudents([...students, newStudent]);
   };
 
-  // Delete student
+  
   const deleteStudent = (id) => {
     const filtered = students.filter((student) => student.id !== id);
     setStudents(filtered);
   };
 
-  // 🔥 STATS CALCULATIONS
+  
   const totalStudents = students.length;
 
   const passedStudents = students.filter(
@@ -58,7 +58,7 @@ function App() {
 
       <AddStudentForm addStudent={addStudent} />
 
-      {/* 🔥 ADD THIS (you missed this) */}
+      {}
       <Stats
         total={totalStudents}
         passed={passedStudents}
