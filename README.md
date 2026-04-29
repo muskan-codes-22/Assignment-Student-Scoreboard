@@ -58,22 +58,3 @@ A React-based web application to manage student scores with dynamic updates, bui
 <img width="1244" height="812" alt="image" src="https://github.com/user-attachments/assets/b0e559cb-aa54-4e91-a2db-a9c3ec73b988" />
 
 
----
-
-## 💡 Learning Outcome
-
-- Understanding of React component structure
-- State & props handling
-- Dynamic UI rendering
-- Event handling in React
-
----
-
-
-## 🎯 Assignment Info
-
-This project was created as part of a Web Development assignment to demonstrate understanding of React concepts and component-based architecture.
-
----
-
-⭐ If you like this project, give it a star!
